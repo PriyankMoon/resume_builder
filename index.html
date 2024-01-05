@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Resume Builder</title>
+  <link rel="shortcut icon" href="./assets/images/img1.png" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ <!-- ScrollReveal CDN -->
+ <script src="https://unpkg.com/scrollreveal"></script>
+ <!-- AOS Library -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+ <!-- Locomotive Scrolling bhi use hui hai  -->
+ <!-- locomotive scrolling = data-scroll data-scroll-speed -->
+ <!-- aur Scroll Reveal me data-sr (abb bhai isske bina(data-sr) ke kuch load hi ni honga ) Q ki iske bina baki sab invlid hoga-->
+ <!-- and AOS ke liye data-aos="fade-up" -->
+  <style>
+    body {
+      scroll-behavior: auto;
+    }
+
+    section .container {
+      scroll-behavior: auto;
+      height: 60vh;
+    }
+
+    @font-face {
+      font-family: MCP;
+      src: url(./assets/fonts/MagnificChaosPersoal.woff2);
+    }
+
+    @font-face {
+      font-family: AS;
+      src: url(./assets/fonts/AnkhSanctuary.woff2);
+    }
+
+    @font-face {
+      font-family: DO;
+      src: url(./assets/fonts/DripOctober.woff2);
+    }
+
+    @font-face {
+      font-family: FL;
+      src: url(./assets/fonts/Florisa.woff2);
+    }
+
+    @font-face {
+      font-family: GZ;
+      src: url(./assets/fonts/GrateZone.woff2);
+    }
+
+    @font-face {
+      font-family: NV;
+      src: url(./assets/fonts/NevermineDEMO.woff2);
+    }
+
+    @font-face {
+      font-family: RJ;
+      src: url(./assets/fonts/Rejouice-Headline.woff2);
+    }
+
+    @font-face {
+      font-family: FS-Ostro;
+      src: url("https://db.onlinewebfonts.com/t/f9ad3735a42ad7a8f71e0554ca1f78d5.eot");
+      src: url("https://db.onlinewebfonts.com/t/f9ad3735a42ad7a8f71e0554ca1f78d5.eot?#iefix")format("embedded-opentype"),;
+      src : url("https://db.onlinewebfonts.com/t/f9ad3735a42ad7a8f71e0554ca1f78d5.woff2")format("woff2");
+        src: url("https://db.onlinewebfonts.com/t/f9ad3735a42ad7a8f71e0554ca1f78d5.woff")format("woff");
+        src: url("https://db.onlinewebfonts.com/t/f9ad3735a42ad7a8f71e0554ca1f78d5.ttf")format("truetype");
+        src: url("https://db.onlinewebfonts.com/t/f9ad3735a42ad7a8f71e0554ca1f78d5.svg#FS Ostro Display VF Regular")format("svg");
+    }
+
+    .text-center h1 {
+      font-size: 40px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-link {
+        margin-left: 17px;
+      }
+
+      .text-center h1 {
+        font-size: 2em;
+      }
+    }
+
+    @media (min-width: 750px) {
+      .conte {
+        margin-left: 16vw;
+      }
+    }
+
+    .bn16 {
+      font-family: lato, sans-serif;
+      font-weight: bold;
+      font-size: 0.9em;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      color: #ffffff;
+      display: inline-block;
+      padding: 10px 40px 10px 40px;
+      position: relative;
+      border: 3px solid #ffffff;
+      border-radius: 25px;
+      width: 5em;
+      height: 2.5em;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 3px 5px 3px 5px;
+      transition: background 250ms ease-in-out, color 250ms ease-in-out;
+    }
+
+    .bn16:hover {
+      backdrop-filter: blur(90px);
+      color: black;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .bn7 {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: #ffffff;
+      padding: 0.3em 1.2em;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #000000;
+      background-size: 100% 100%;
+      margin: 6px 5px 3px 5px;
+    }
+
+    .bn7:hover {
+      color: red;
+    }
+
+    .nav-item {
+      margin: 3px 5px 3px 5px;
+    }
+
+    @media (max-width:600px){
+      nav,img{
+        scale: 1;
+      }
+      form{
+        width: 75vw;
+        margin-left: -70px;
+      }
+      .feature img{
+        margin-left: -50px;
+        margin-right: 50px;
+        height: 45vh;
+        width: 35vh;
+      }
+      body{
+        width: 100vw;
+      }
+    }
+    .feature img{
+      height: 20em;
+      width: 15em;
+      aspect-ratio: 4/2;
+    }
+    @media (max-width:1024px){
+      .feature img{
+        height: 15em;
+        width: 10em;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    @media (max-width:285px){
+      .text-center h1 {
+        font-size: 1.5em;
+      }
+      #social{
+        margin-left: 35px;
+      }
+      nav{
+        margin-right: -70px;
+      }
+      .jumbo{
+        width: 90vw;
+        margin-left: 50px;
+      }
+      .jumbotron{
+        width: 90vw;
+      }
+      .coloco{
+        width: 75vw;
+        margin-left: 10px;
+      }
+      .feature{
+        width: 100vw;
+        margin-left: -40px;
+        margin-right: -80px;
+      }
+      body{
+        margin-right: -70px;
+        }
+      }
+  </style>
+</head>
+
+<body class="bg-light">
+  <header data-sr>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="heading d-flex justify-content-center align-items-center">
+        <!-- Logo on the left side -->
+        <b>
+          <img src="./assets/images/logo.webp"
+            style="height: 7vh; width: 7vh; border-radius: 50%; filter: brightness(120%); margin-right: 10px;">
+        </b>
+
+        <!-- Title and subtitle on the right side -->
+        <div class="text-center">
+          <h1 class="h3 fw-normal my-1"
+            style=" font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: rgb(255, 255, 0); text-shadow: 0 0 10px rgba(168, 86, 255, 0.865); margin-bottom: 5px;">
+            Resume <c style="color: rgb(255, 255, 255); text-shadow: none;">Builder</c>
+          </h1>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="bn16" href="login.php">
+              <div class="log">Login</div>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <div class="btn-group">
+              <a href="register.php" class="bn7">Register</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#connection">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container jumbo" data-scroll-container data-sr data-aos="fade-up">
+    <section class="jumbotron text-center" data-scroll-section data-sr data-aos="fade-up">
+      <h1 class="display-4" style="font-family: RJ; font-size: 3.5em; font-size: 3.5em; z-index: 99;" data-scroll
+        data-scroll-speed="1.5" data-sr>BUILD YOUR PERFECT RESUME
+      </h1>
+      <p class="lead" style="font-size: 1.5em; font-family: OS-Astra; z-index: 99;" data-scroll data-scroll-speed="1.5" data-sr>
+        Create a professional and compelling resume with our easy-to-use resume builder.All for Free !</p>
+      <a href="register.php" class="btn btn-primary btn-lg" data-scroll data-scroll-speed="1"
+        style="font-family: SV;" data-sr >Get Started</a>
+    </section>
+  </div>
+
+  <hr>
+
+  <section class="feature" data-scroll data-scroll-section style="margin-top: 100px;" data-sr data-aos="fade-up">
+    <div class="row" style="margin: 0 100px 0 100px;" data-scroll data-sr >
+      <div class="col-md-3 coloco" data-scroll data-scroll-speed="1" data-sr
+        style="align-items: center; text-align: center; justify-content: center; ">
+        <h2 data-sr >Feature 1 : User Friendly Interface</h2>
+        <p data-sr >Design an intuitive and easy-to-use interface for creating and editing resumes.
+          Provide a step-by-step process to guide users through the resume-building journey.</p>
+        <img src="./assets/images/Userinterface.webp"  data-sr >
+      </div>
+      <div class="col-md-5 coloco" data-scroll data-scroll-speed="0.8" data-sr
+        style="align-items: center; text-align: center; justify-content: center; ">
+        <h2 data-sr >Feature 2 : Rich Text Editing</h2>
+        <p data-sr >Enable users to format text, add bullet points, and apply different styles to make their resume visually
+          appealing.</p>
+        <img src="./assets/images/FontText2.webp"  data-sr >
+      </div>
+      <div class="col-md-4 coloco" data-scroll data-scroll-speed="0.9" data-sr
+        style="align-items: center; text-align: center; justify-content: center; ">
+        <h2 data-sr >Feature 3 : Mobile Responsiveness</h2>
+        <p data-sr >Ensure the resume builder is mobile-friendly, allowing users to create and edit resumes on smartphones and
+          tablets.</p>
+        <img src="./assets/images/Feature3.1.webp"  data-sr >
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="container" data-scroll style="height: 45vh;">
+    <section data-scroll>
+<div data-scroll data-scroll-speed="1.5">
+
+</div>
+    </section>
+  </div> -->
+  <div class="row" id="connection" style="margin-top: 150px;" data-scroll data-sr >
+    <section id="contact" class="py-5 bg-light col-md-6" style=" align-items: center; margin-bottom: 100px;" data-scroll-section
+      data-sr>
+      <div class="container" data-scroll data-scroll-container data-scroll-speed="0.6" data-sr>
+        <h2 class="text-start" style="text-align: center; font-family: RJ;" data-scroll
+          data-scroll-direction="horizontal" data-sr >Contact Me</h2>
+        <div class="row" style="margin:40px 0 0 -40px ; display:flex ; align-items: center;">
+          <div class="col-md-8 conte" style="margin-left: 150px;">
+            <form action="https://formspree.io/f/mvojkyej" method="POST"
+              style="border: 3px solid rgb(130, 128, 128); border-radius: 50px; padding: 20px 20px 20px 20px ; max-width: 450px;" data-sr >
+              <div class="form-group" style="-webkit-text-size-adjust: 100%;">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" autocomplete="off" placeholder="Your Name"
+                  required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" autocomplete="off"
+                  placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Subject</label>
+                <input type="text" class="form-control" id="title" name="Subject" autocomplete="off"
+                  placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="4" name="message" autocomplete="off"
+                  placeholder="Your Message" required min="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="social" class="py-5 bg-light col-md-6 " data-scroll data-scroll-section data-sr>
+      <div class="container text-center" data-scroll data-scroll-container data-scroll-speed="0.4"
+        data-scroll-direction="horizontal" data-sr >
+        <h2 class="text-dark mb-4" style="text-decoration: underline;" data-sr >Connect with Me</h2>
+        <div class="main" class="py-5  d-flex align-items-center justify-content-center">
+          <!-- Social icons -->
+          <div class="py-5  d-flex align-items-center justify-content-center">
+            <!-- LinkedIn -->
+            <div class="p-2">
+              <a href="https://in.linkedin.com/in/priyank-moon-3b4bab227" target="_blank" class="social-icon">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png"
+                  alt="LinkedIn" class="img-fluid" style="max-width: 70px; scale: 0.70; border-radius: 50%;" data-sr >
+              </a>
+              <p class="text-dark text-center" data-sr >LinkedIn</p>
+            </div>
+            <!-- GitHub -->
+            <div class="p-2">
+              <a href="https://github.com/PriyankMoon" target="_blank" class="social-icon">
+                <img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="GitHub" class="img-fluid" id="twits"
+                  style="max-width: 70px; scale: 0.70;" data-sr >
+              </a>
+              <p class="text-dark text-center" data-sr >GitHub</p>
+            </div>
+            <!-- Instagram -->
+            <div class="p-2">
+              <a href="https://instagram.com/_priyank_moon_124?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"
+                target="_blank" class="social-icon">
+                <img src="https://icon-library.com/images/instagram-logo-icon-png/instagram-logo-icon-png-10.jpg"
+                  alt="Instagram" class="img-fluid" style="max-width: 70px; scale: 0.70;" data-sr >
+              </a>
+              <p class="text-dark text-center" data-sr >Instagram</p>
+            </div>
+          </div>
+          <style>
+            a:hover{
+              color: rgba(255, 224, 47, 0.922);
+              text-shadow: 0 0 22px #7700ffe3;
+            }
+          </style>
+          <!-- Portfolio link -->
+          <div class="port" data-sr >
+            <a href="https://priyankmoon.github.io/portfolio/" style="color: #004cffe3;">https://Portfolio.com</a>
+          </div>
+
+          <hr>
+
+
+
+          <a href="mailto:priyankmoon124@gmail.com" style="color: rgb(0, 0, 0); font-size: 20px;" data-sr >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+              <path
+                d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
+              <path
+                d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z" />
+            </svg> @gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+  <div class="container" data-scroll style="height: 50vh;" data-sr>
+    <section data-scroll-section>
+      <div data-scroll-speed="1.5">
+
+      </div>
+    </section>
+  </div>
+  <footer class=" text-white text-center p-2"  data-scroll data-scroll-speed="1.4" data-sr>
+    <p style="margin-top: 20px; color: #000000;" data-scroll-section data-scroll-direction="horizontal"
+      data-scroll-speed="3" data-sr >&copy; 2023 Resume Builder. All rights reserved.</p>
+  </footer>
+  <div class="container" data-scroll style="height: 50vh;">
+    <section data-scroll-section>
+      <div data-scroll-speed="3.1" data-sr style="color: black; display: flex; text-align: center; align-items: center; justify-content: center; ">
+        <h3 style="font-family: FL;">X</h3><h3  style="font-family: NV;">Thank You For Visiting </h3><h3 style="font-family: FL;">X</h3>
+      </div>
+    </section>
+  </div>
+  <script src="path/to/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Initialize Locomotive Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      // Other options...
+    });
+  </script>
+  <!-- Add this script at the end of your body tag, after the Locomotive Scroll initialization -->
+
+  <script>
+    // Wait for the DOM to be ready
+    document.addEventListener("DOMContentLoaded", function () {
+      // Select all links with the class 'nav-link'
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      // Add click event listener to each nav-link
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+          // Prevent default link behavior
+          event.preventDefault();
+
+          // Get the target section's ID from the link's href attribute
+          const targetId = this.getAttribute('href').substring(1);
+
+          // Find the target section by ID
+          const targetSection = document.getElementById(targetId);
+
+          // Scroll to the target section using Locomotive Scroll
+          scroll.scrollTo(targetSection);
+        });
+      });
+    });
+  </script>
+  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      delay: 200,
+      duration: 800,
+      easing: 'ease-in-out',
+      reset: true
+    });
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    offset: 100, // Adjust the offset as needed
+    duration: 1000, // Animation duration in milliseconds
+    easing: 'ease-in-out', // Animati data-aos="fade-up"on easing
+    once: true, // Whether to only animate once
+  });
+</script>
+
+
+</body>
+
+</html>

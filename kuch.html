@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Display with Bootstrap</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #imageContainer img {
+            width: 100px;
+            height:100px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        #uploadButton {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5 text-center" style="display: flex; text-align: center; align-items: center; justify-content: center;">
+        <!-- Upload Image button -->
+        <button type="button" class="btn btn-primary" id="uploadButton" data-toggle="modal" data-target="#uploadModal" aria-hidden="false">
+            Upload Profile
+        </button>
+
+        <!-- Upload Modal -->
+        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="uploadModalLabel">Upload Image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="imageInput">Choose an image:</label>
+                                <input type="file" class="form-control" id="imageInput" name="image" accept="image/*">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="uploadImage()">Upload Image</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Container -->
+        <div id="imageContainer"></div>
+
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function uploadImage() {
+            var input = document.getElementById('imageInput');
+            var container = document.getElementById('imageContainer');
+            var uploadButton = document.getElementById('uploadButton');
+
+            // Check if a file is selected
+            if (input.files.length > 0) {
+                var file = input.files[0];
+
+                // Create a FileReader to read the uploaded image
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Display the uploaded image
+                    container.innerHTML = '<img src="' + e.target.result + '" alt="Uploaded Image" data-toggle="modal" data-target="#deleteModal" style=" object-fit: cover;">';
+                    // Show the delete button
+                    deleteBtn.style.display = 'inline-block';
+                    // Hide the upload button
+                    uploadButton.style.display = 'none';
+                    // Set aria-hidden to true
+                    uploadButton.setAttribute('aria-hidden', 'true');
+                };
+
+                // Read the image as a data URL
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image to upload.');
+            }
+
+            // Close the upload modal
+            $('#uploadModal').modal('hide');
+        }
+
+        function deleteImage() {
+            var container = document.getElementById('imageContainer');
+            var uploadButton = document.getElementById('uploadButton');
+
+            // Remove the image
+            container.innerHTML = '';
+            // Show the upload button
+            uploadButton.style.display = 'block';
+            // Set aria-hidden to false
+            uploadButton.setAttribute('aria-hidden', 'false');
+
+            // Close the delete modal
+            $('#deleteModal').modal('hide');
+        }
+    </script>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to delete the image?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteImage()">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
