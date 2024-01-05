@@ -1,7 +1,7 @@
 ﻿# resume_builder
 
 
-for a dataase 
+Create this Similar Database for the project to work 
 
 datase name  = "resume_builder"
 
