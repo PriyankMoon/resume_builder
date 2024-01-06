@@ -5,7 +5,7 @@ Create this Similar Database for the project to work
 
 datase name  = "resume_builder"
 
-                                                 1st table ="users" 
+1st table ="users" 
 
                             Note : Create the Table users then jump to SQl and paste this 
 
