@@ -5,6 +5,7 @@ Create this Similar Database for the project to work
 
 datase name  = "resume_builder"
 
+just copy this SQL Query and paste in resume_builder SQL 
 
     CREATE TABLE `users` (`id` int(11) NOT NULL,`full_name` varchar(250) NOT NULL,`email_id` varchar(250) NOT NULL,`password` varchar(250) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
