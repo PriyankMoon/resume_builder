@@ -5,6 +5,7 @@ Create this Similar Database for the project to work
 
 datase name  = "resume_builder"
 
+
 1st table ="users" 
 
 Note : Create the Table users then jump to SQl and paste this 
@@ -34,6 +35,7 @@ Note : Create the Table resumes then jump to SQl and paste this
 
 
 3rd table ="experiences"
+
 Note : Create the Table experiences then jump to SQl and paste this 
 
     CREATE TABLE `experiences` (`id` int(11) NOT NULL,`resume_id` int(11) NOT NULL,`position` varchar(250) NOT NULL,
@@ -45,6 +47,7 @@ Note : Create the Table experiences then jump to SQl and paste this
 
 
 4th table ="educations"
+
 Note : Create the Table educations then jump to SQl and paste this 
 
     CREATE TABLE `educations` (`id` int(11) NOT NULL,`resume_id` int(11) NOT NULL,`institute` varchar(250) NOT NULL,`course` varchar(250) NOT NULL,`started` varchar(250) NOT NULL,`ended` varchar(250) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -55,6 +58,7 @@ Note : Create the Table educations then jump to SQl and paste this
 
 
 5th table ="skills"
+
 Note : Create the Table skills then jump to SQl and paste this 
 
     CREATE TABLE `skills` (`id` int(11) NOT NULL,`resume_id` int(11) NOT NULL,`skill` text NOT NULL,`sub_skill` varchar(250) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
