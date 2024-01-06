@@ -29,56 +29,37 @@ Note : Create the Table resumes then jump to SQl and paste this
     
     ALTER TABLE `resumes`ADD PRIMARY KEY (`id`);
     
-    ALTER TABLE `resumes`MODIFY `id`int(11) NOT NULL AUTO_INCREMENT,;
+    ALTER TABLE `resumes`MODIFY `id`int(11) NOT NULL AUTO_INCREMENT;
 
 
 
 3rd table ="experiences"
-{
- 
-    id = Primary Key Auto Incremented int(11);
+Note : Create the Table experiences then jump to SQl and paste this 
 
-    resume_id = int(11);
+    CREATE TABLE `experiences` (`id` int(11) NOT NULL,`resume_id` int(11) NOT NULL,`position` varchar(250) NOT NULL,
+    `company` varchar(250) NOT NULL,`job_desc` text NOT NULL,`started` varchar(250) NOT NULL,`ended` varchar(250) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    
+    ALTER TABLE `experiences`ADD PRIMARY KEY (`id`);
+    
+    ALTER TABLE `experiences`MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
-    position = varchar(250);
-
-    company = varchar(250);
-
-    job_desc = text;
-
-    started = varchar(250);
-
-    ended = varchar(250);
-
-}
 
 4th table ="educations"
-{
+Note : Create the Table educations then jump to SQl and paste this 
 
-    id = Primary Key Auto Incremented int(11);
+    CREATE TABLE `educations` (`id` int(11) NOT NULL,`resume_id` int(11) NOT NULL,`institute` varchar(250) NOT NULL,`course` varchar(250) NOT NULL,`started` varchar(250) NOT NULL,`ended` varchar(250) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    
+    ALTER TABLE `educations`ADD PRIMARY KEY (`id`);
+    
+    ALTER TABLE `educations`MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
-    resume_id = int(11);	
-
-    institute = varchar(250);	
-
-    course = varchar(250);
-
-    started = varchar(250);
-
-    ended = varchar(250);
-
-}
 
 5th table ="skills"
-{
+Note : Create the Table skills then jump to SQl and paste this 
 
-    id = Primary Key Auto Incremented int(11);	
+    CREATE TABLE `skills` (`id` int(11) NOT NULL,`resume_id` int(11) NOT NULL,`skill` text NOT NULL,`sub_skill` varchar(250) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    
+    ALTER TABLE `skills`ADD PRIMARY KEY (`id`);
+    
+    ALTER TABLE `skills`MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
-    resume_id = int(11);
-
-    skill = text;	
-
-    sub_skill = varchar(250);
-
-}
-      
