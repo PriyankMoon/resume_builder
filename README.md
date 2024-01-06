@@ -6,15 +6,33 @@ Create this Similar Database for the project to work
 datase name  = "resume_builder"
 
 1st table ="users"
+
 {
 
-    id =int(11) Auto incremented Primary Key ;
+    "CREATE TABLE `users` (
 
-    full_name = varchar(250);
+  `id` int(11) NOT NULL,
 
-    email_id = Unique Key varchar(250);
+  `full_name` varchar(250) NOT NULL,
 
-    password = varchar(250);
+  `email_id` varchar(250) NOT NULL,
+
+  `password` varchar(250) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;"
+
+
+"ALTER TABLE `users`
+
+  ADD PRIMARY KEY (`id`),
+
+  ADD UNIQUE KEY `email_id` (`email_id`);"
+
+
+  "ALTER TABLE `users`
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;"
+
 
 }
 
