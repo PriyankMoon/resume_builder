@@ -7,7 +7,6 @@ datase name  = "resume_builder"
 
 1st table ="users"
 
-{
 
     "CREATE TABLE `users` (
 
@@ -34,7 +33,6 @@ datase name  = "resume_builder"
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;"
 
 
-}
 
 2nd table ="resumes"
 {
