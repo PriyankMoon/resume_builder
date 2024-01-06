@@ -6,42 +6,26 @@ Create this Similar Database for the project to work
 datase name  = "resume_builder"
 
 1st table(create the table "users" then go to the SQL and edit )
+"
 {
-    
     CREATE TABLE `users` (
-  
   `id` int(11) NOT NULL,
-  
   `full_name` varchar(250) NOT NULL,
-  
   `email_id` varchar(250) NOT NULL,
-  
   `password` varchar(250) NOT NULL
-
-) ENGINE=InnoDB DEFAULT 
-CHARSET=utf8mb4 
-COLLATE=utf8mb4_general_ci;
-
-}
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+}"
+"
 {
-    
     ALTER TABLE `users`
-  
   ADD PRIMARY KEY (`id`),
-  
   ADD UNIQUE KEY `email_id` (`email_id`);
-
-}
-
+}"
+"
 {
-    
     ALTER TABLE `users`
-  
-  MODIFY `id` int(11) NOT NULL 
-  AUTO_INCREMENT;
-
-}
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+}"
 
 
 2nd table ="resumes"
