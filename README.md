@@ -51,3 +51,7 @@ just copy this SQL Query and paste in resume_builder SQL
     
     ALTER TABLE `skills`MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+
+
+# to run the code , install xampp server and initialize the project 
+
